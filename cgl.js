@@ -10,15 +10,14 @@ var flag = false;
 var arr = new Array();
 var arr2 = new Array();
 
-function buttonClick(){
-    if(!flag){
-        setupArr();
-        drawCanvas();
-        flag = true;
-    }else{
-        timestep();
-        drawCanvas();
-    }
+function setupBtn(){
+    setupArr();
+    drawCanvas();
+}
+
+function timeStep(){
+    timestep();
+    drawCanvas();
 }
 
 function setupArr(){
