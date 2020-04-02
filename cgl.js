@@ -7,15 +7,17 @@ var arr = new Array();
 var map = new Array();
 var seacolor = [0,80,200];
 
+/**
+ * When the time step button is pressed:
+ * -gets the next iteration
+ * -draws the result
+ */
 function timeStepBtn(){
     console.log("time stepped");
     arr = getNextIteration(arr);
     drawCanvas(arr);
-
-    // arr = Array.from(arr2);//Copy arr2 to arr
-    // setup2DArr(arr2, 0);
-
 }
+
 
 function setupBtn(){
     setup2DArr(arr, 0);
@@ -45,6 +47,10 @@ function setupBtn(){
 }
 
 
+/**
+ * 
+ * @param {*} data A pixel value in the map describing the setup of the experiment
+ */
 function mapColorToMapValue(data){
     //Red -> Starting vals (2)
     if(data[0] > 100 && data [1] < 50 && data[2] < 50){
@@ -59,6 +65,7 @@ function mapColorToMapValue(data){
         return 0;
     }
     else{
+        //Color category not found, treat as sea
         console.log("Color not registered in mapColorToMapValue" + data);
         return 0;
     }
